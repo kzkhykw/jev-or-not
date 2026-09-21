@@ -1,21 +1,23 @@
-# Jevる？
+# Should You Jev?
 
-入力データの性質から、利用するモデルや処理方法を選ぶための判断フローです。
+English | [日本語](README.ja.md)
+
+A decision flow for choosing a model or processing method based on the characteristics of the input data.
 
 ```mermaid
 flowchart TD
-    A{"賢さいらない？"}
-    B{"リアルタイム"}
-    C{"大量？"}
-    D{"入力が非構造化<br/>データ？"}
-    E{"分類が動的？<br/>教師データ用意<br/>できない？"}
-    F{"学習めんどい？"}
+    A{"No intelligence<br/>needed?"}
+    B{"Real-time?"}
+    C{"High volume?"}
+    D{"Is the input<br/>unstructured data?"}
+    E{"Are categories dynamic?<br/>Can't prepare<br/>training data?"}
+    F{"Training too much work?"}
 
     J["Jev"]
     BERT["BERT"]
-    IF["if文"]
-    LIGHT["軽いLLM"]
-    SOME["ある程度のLLM"]
+    IF["if statement"]
+    LIGHT["Lightweight LLM"]
+    SOME["Moderately capable LLM"]
 
     A -->|Yes| B
     A -->|No| SOME
@@ -31,10 +33,10 @@ flowchart TD
     F -->|No| BERT
 ```
 
-## 判断の流れ
+## Decision flow
 
-- 賢さが不要なら、ある程度のLLMを利用
-- リアルタイム性が必要なら、データ量を確認
-- 大量の非構造化データで分類が動的、または教師データを用意できない場合は学習の手間を確認
-- 学習が面倒ならJev、そうでなければBERT
-- 非構造化データでなければif文、リアルタイム性が不要なら軽いLLM
+- If intelligence is not required, use a moderately capable LLM.
+- If real-time processing is required, check the data volume.
+- For high-volume, unstructured data with dynamic categories—or when training data cannot be prepared—consider the training effort.
+- If training is too much work, use Jev; otherwise, use BERT.
+- Use an `if` statement for structured data, or a lightweight LLM when real-time processing is not required.
