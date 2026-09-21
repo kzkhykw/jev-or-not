@@ -3,7 +3,6 @@
 入力データの性質から、利用するモデルや処理方法を選ぶための判断フローです。
 
 ```mermaid
-%%{init: {"flowchart": {"curve": "step"}}}%%
 flowchart TD
     A{"賢さいらない？"}
     B{"リアルタイム"}
